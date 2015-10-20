@@ -122,13 +122,13 @@
     });
 
     if (dualListbox.settings.showFilterInputs) {
-      filter(dualListbox, 1);
-      filter(dualListbox, 2);
+      $.fn.dlbfilter(dualListbox, 1);
+      $.fn.dlbfilter(dualListbox, 2);
     }
     refreshInfo(dualListbox);
   }
 
-  function filter(dualListbox, selectIndex) {
+  $.fn.dlbfilter = function(dualListbox, selectIndex) {
     if (!dualListbox.settings.showFilterInputs) {
       return;
     }
@@ -297,11 +297,11 @@
     });
 
     dualListbox.elements.filterInput1.on('change keyup', function() {
-      filter(dualListbox, 1);
+      $.fn.dlbfilter(dualListbox, 1);
     });
 
     dualListbox.elements.filterInput2.on('change keyup', function() {
-      filter(dualListbox, 2);
+      $.fn.dlbfilter(dualListbox, 2);
     });
   }
 
